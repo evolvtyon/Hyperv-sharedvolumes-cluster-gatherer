@@ -6,7 +6,7 @@ Function Gather-all-cluster-shrVolumes {
     )
 
     % { $volume = Get-ClusterSharedVolume -Cluster $ClusterName; $volume | `
-    Add-Member -NotePropertyName “Name” -NotePropertyValue $_.Name; $volume } `
+    Add-Member -NotePropertyName “Name” -ExpandPropertyValue $_.SharedVolumeInfo; $volume } `
     Select-Object Name, `
                  @{Label = 'Path';expression={$_.FriendlyVolumeName}}, `
                  @{Label = 'Size(GB)';expression={$_.Partition.Size/1gb -as [int]}}, `
