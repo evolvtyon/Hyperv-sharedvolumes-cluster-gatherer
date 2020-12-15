@@ -1,4 +1,4 @@
-Function Gather-all-cluster-shrVolumes {
+Function Gather-all-cluster-sharedVolumes {
 
 [CmdletBinding(SupportsShouldProcess=$true)]
     Param(
